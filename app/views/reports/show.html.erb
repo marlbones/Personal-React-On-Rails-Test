@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @report.title %>
+</p>
+
+<p>
+  <strong>Header colour:</strong>
+  <%= @report.header_colour %>
+</p>
+
+<p>
+  <strong>Footer colour:</strong>
+  <%= @report.footer_colour %>
+</p>
+
+<%= link_to 'Edit', edit_report_path(@report) %> |
+<%= link_to 'Back', reports_path %>
