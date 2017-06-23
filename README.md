@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Clone and before cd'ing into the application directory install foreman:
 
-Things you may want to cover:
+`$ gem install foreman`
 
-* Ruby version
+Cd into the directory and `$ bundle install` and `$ yarn install`
 
-* System dependencies
+Start the server with:
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+`foreman start -f Procfile.dev`

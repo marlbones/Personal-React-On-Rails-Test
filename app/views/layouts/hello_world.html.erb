@@ -1,19 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TestReactOnRails</title>
+    <title>ReactOnRailsWithWebpacker</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'webpack-bundle' %>
   </head>
 
   <body>
-    <!-- Including webpack assets into application -->
-    <%= javascript_pack_tag 'main' %>
-
-    <p class="alert"><%= alert %></p>
-    <p class="notice"><%= notice %></p>
     <%= yield %>
   </body>
 </html>

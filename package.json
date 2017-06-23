@@ -1,0 +1,8 @@
+{
+  "name": "test_react_on_rails",
+  "private": true,
+  "dependencies": {},
+  "scripts": {
+    "postinstall": "cd client && yarn install"
+  }
+}
