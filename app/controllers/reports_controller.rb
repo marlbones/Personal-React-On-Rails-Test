@@ -1,10 +1,12 @@
 class ReportsController < ApplicationController
   before_action :set_report, only: [:show, :edit, :update, :destroy]
+  layout "report_index"
 
   # GET /reports
   # GET /reports.json
   def index
     @reports = Report.all
+    @reportIndexprops = { reports: @reports }
   end
 
   # GET /reports/1
