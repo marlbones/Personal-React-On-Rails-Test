@@ -23,9 +23,9 @@ export default class Report extends React.Component {
     var title = this.state.title;
     var headerColour = this.state.headerColour;
     var footerColour = this.props.report.footer_colour;
-    var report = { id: id, title: title, header_colour: headerColour, footer_colour: footerColour }
+    var report = { id: id, title: title, header_colour: headerColour, footer_colour: footerColour };
     this.props.handleUpdate(report);
-    console.log(report);
+    this.props.getReports();
   }
     this.setState({ editable: !this.state.editable })
   }

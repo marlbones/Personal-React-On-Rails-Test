@@ -43,16 +43,16 @@ export default class ReportIndex extends React.Component {
 
    handleUpdate(report) {
      console.log(report);
-    //  $.ajax({
-    //    url: `/reports/${zz}`,
-    //    type: 'PUT',
-    //    data: { report: report },
-    //    success: () => {
-    //      console.log('you did it');
-    //      this.updateReports(report);
-    //      // callback to swap objects
-    //    }
-    //  });
+     $.ajax({
+       url: `/reports/${report.id}`,
+       type: 'PUT',
+       data: { report: report },
+       success: () => {
+         console.log('you did it');
+         this.updateReports(report);
+         // callback to swap objects
+       }
+     });
   };
 
   updateReports(report) {
@@ -72,7 +72,9 @@ export default class ReportIndex extends React.Component {
               <Report report={report}
                       handleDelete={() => this.handleDelete(report.id)}
                       handleEdit={() => this.handleEdit()}
-                      handleUpdate={() => this.handleUpdate()}
+                      handleUpdate={this.handleUpdate}
+                      getReports={() => this.getReports()}
+
               />
             {/* <li>{report.title}</li>
             <button onClick={() => this.handleDelete(report.id)}>Delete</button>
