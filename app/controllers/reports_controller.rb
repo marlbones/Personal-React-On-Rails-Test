@@ -6,7 +6,6 @@ class ReportsController < ApplicationController
   # GET /reports.json
   def index
     @reports = Report.all
-    @reportIndexprops = { reports: @reports }
   end
 
   # GET /reports/1
@@ -30,7 +29,7 @@ class ReportsController < ApplicationController
 
     respond_to do |format|
       if @report.save
-        format.html { redirect_to @report, notice: 'Report was successfully created.' }
+        format.html
         format.json { render :show, status: :created, location: @report }
       else
         format.html { render :new }
@@ -44,7 +43,7 @@ class ReportsController < ApplicationController
   def update
     respond_to do |format|
       if @report.update(report_params)
-        format.html { redirect_to @report, notice: 'Report was successfully updated.' }
+        format.html
         format.json { render :show, status: :ok, location: @report }
       else
         format.html { render :edit }
