@@ -64,10 +64,19 @@ const config = {
         exclude: /node_modules/,
       },
     ],
+    loaders: [
+    {
+      test: /plugin\.css$/,
+      loaders: [
+        'style', 'css',
+      ],
+    },
+    ],
   },
 };
 
 module.exports = config;
+
 
 if (devBuild) {
   console.log('Webpack dev build for Rails'); // eslint-disable-line no-console

@@ -2,6 +2,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import NewReport from '../components/NewReport';
 import Report from '../components/Report';
+import Routes from '../components/Routes';
+import Display from '../components/Display';
 
 export default class ReportIndex extends React.Component {
   // static propTypes = {
@@ -14,10 +16,13 @@ export default class ReportIndex extends React.Component {
    */
 
    constructor(props, _railsContext) {
-     super(props);
-     this.state = {
-      reports: [] }
-   };
+       super(props);
+       this.state = {
+        reports: [],
+        report: ''
+      };
+      // this.updateMate = this.updateMate.bind(this);
+   }
 
    componentDidMount() {
      this.getReports();
@@ -62,9 +67,18 @@ export default class ReportIndex extends React.Component {
     this.setState({ reports: reports });
   }
 
+  objectPass(report) {
+    this.updateMate(report)
+  };
+
+  updateMate(report) {
+    this.setState({ report: report });
+  }
+
    render() {
      return (
        <div>
+         <Routes />
          <h1>Reports</h1>
          <ul>
            {this.state.reports.map((report, i) =>
@@ -74,7 +88,8 @@ export default class ReportIndex extends React.Component {
                       handleEdit={() => this.handleEdit()}
                       handleUpdate={this.handleUpdate}
                       getReports={() => this.getReports()}
-
+                      objectPass={this.objectPass}
+                      updateMate={() => this.updateMate(report)}
               />
             {/* <li>{report.title}</li>
             <button onClick={() => this.handleDelete(report.id)}>Delete</button>
@@ -82,6 +97,10 @@ export default class ReportIndex extends React.Component {
             </div>)}
          </ul>
          <NewReport getReports={() => this.getReports()} />
+         <div className="woop">
+           <h1>Maybe see you later</h1>
+           <Display report={this.state.report} />
+         </div>
        </div>
      );
    }

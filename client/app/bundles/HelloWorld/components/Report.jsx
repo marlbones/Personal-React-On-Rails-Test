@@ -30,6 +30,10 @@ export default class Report extends React.Component {
     this.setState({ editable: !this.state.editable })
   }
 
+  passObject(report) {
+    this.props.objectPass(report);
+  }
+
    handleEdit() {
     if (this.state.editable) {
       var title = this.state.title;
@@ -58,6 +62,7 @@ export default class Report extends React.Component {
           </button>
 
           <button onClick={() => this.handleEdit()}>{this.state.editable ? 'Submit' : 'Edit' }</button>
+          <button onClick={() => this.passObject(this.props.report)}>Show</button>
        </div>
      );
    }

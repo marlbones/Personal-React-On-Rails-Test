@@ -1,5 +1,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import Tiny from '../components/Tiny';
+import TinyEditor from '../components/TinyEditor';
+import ReportIndex from '../components/ReportIndex';
 
 export default class HelloWorld extends React.Component {
   static propTypes = {
@@ -40,6 +43,16 @@ export default class HelloWorld extends React.Component {
             onChange={(e) => this.updateName(e.target.value)}
           />
         </form>
+
+          <Tiny />
+          <button onClick={() => console.log('hi')}>Save</button>
+          <hr />
+          <ReportIndex />
+
+        {/* <TinyEditor
+          id="myCoolEditor"
+          onEditorChange={content => console.log(content)}
+        /> */}
       </div>
     );
   }

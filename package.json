@@ -1,7 +1,10 @@
 {
   "name": "test_react_on_rails",
   "private": true,
-  "dependencies": {},
+  "dependencies": {
+    "react-router": "^4.1.1",
+    "react-router-dom": "^4.1.1"
+  },
   "scripts": {
     "postinstall": "cd client && yarn install"
   }
