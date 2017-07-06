@@ -73,7 +73,10 @@ export default class ReportIndex extends React.Component {
 
   updateMate(report) {
     this.setState({ report: report });
+    this.props.helloUpdateReport(report);
   }
+
+
 
    render() {
      return (

@@ -18,11 +18,21 @@ export default class HelloWorld extends React.Component {
 
     // How to set initial state in ES6 class syntax
     // https://facebook.github.io/react/docs/reusable-components.html#es6-classes
-    this.state = { name: this.props.somethingELse };
+    this.state = {
+      name: this.props.somethingELse,
+      report: 'yup'
+    };
+    this.helloUpdateReport = this.helloUpdateReport.bind(this);
+
   }
 
   updateName = (name) => {
     this.setState({ name });
+  };
+
+  helloUpdateReport(report) {
+    this.setState({report: report})
+    console.log('YAYAYAAY', this.state.report)
   };
 
   render() {
@@ -44,10 +54,10 @@ export default class HelloWorld extends React.Component {
           />
         </form>
 
-          <Tiny />
+          <Tiny report={this.state.report} />
           <button onClick={() => console.log('hi')}>Save</button>
           <hr />
-          <ReportIndex />
+          <ReportIndex helloUpdateReport={this.helloUpdateReport} />
 
         {/* <TinyEditor
           id="myCoolEditor"

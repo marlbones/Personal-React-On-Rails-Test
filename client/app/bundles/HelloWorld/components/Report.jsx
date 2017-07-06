@@ -52,10 +52,11 @@ export default class Report extends React.Component {
     let details = this.state.editable ? <textarea type='text'
                                                   defaultValue={this.props.report.header_colour}
                                                   onChange={ (e) => this.setState({ headerColour: e.target.value }) }></textarea>
-                                      : <p>{this.props.report.header_colour}</p>
+                                      : <div dangerouslySetInnerHTML={ {__html: this.props.report.header_colour} } />
      return (
        <div>
          <p>{name}{details}</p>
+         {this.props.report.content}
 
          <button onClick={this.props.handleDelete}>
             Delete
@@ -63,6 +64,7 @@ export default class Report extends React.Component {
 
           <button onClick={() => this.handleEdit()}>{this.state.editable ? 'Submit' : 'Edit' }</button>
           <button onClick={() => this.passObject(this.props.report)}>Show</button>
+          <button onClick={() => this.passObject(this.props.report)}>Content</button>
        </div>
      );
    }
